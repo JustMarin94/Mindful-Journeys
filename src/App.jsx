@@ -8,7 +8,7 @@ import Večera from "./pages/Večera";
 import Blog from "./pages/Blog";
 import Radionice from "./pages/Radionice";
 import Dogadjanja from "./pages/Dogadjanja";
-import ZdravljeBlog from "./pages/Zdravlje";
+import MentalnoZdravlje from "./pages/MentalnoZdravlje";
 import ProfilLista from "./pages/ProfilLista";
 
 function App() {
@@ -23,8 +23,8 @@ function App() {
         <Route path="/recepti/ručak" element={<Ručak />} />
         <Route path="/recepti/večera" element={<Večera />} />
         <Route path="/putovanja/blog" element={<Blog />} />
+        <Route path="/zdravlje" element={<MentalnoZdravlje />} />
         <Route path="/zdravlje/radionice" element={<Radionice />} />
-        <Route path="/zdravlje/blog" element={<ZdravljeBlog />} />
         <Route path="/dogadjanja" element={<Dogadjanja />} />
       </Routes>
     </Router>

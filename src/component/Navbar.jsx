@@ -19,8 +19,9 @@ const Navbar = () => {
     setSubmenu("");
   };
 
-  return (
-    <AppBar position="static">
+return(
+  <>
+  <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Stranica
@@ -111,7 +112,7 @@ const Navbar = () => {
             onClick={(e) => handleMenuOpen(e, "zdravlje")}
           >
             Zdravlje
-          </Button>
+            </Button>
           <Menu
             anchorEl={anchorEl}
             open={submenu === "zdravlje"}
@@ -140,7 +141,11 @@ const Navbar = () => {
         </Box>
       </Toolbar>
     </AppBar>
-  );
-};
+  </>
+)
+}
 
 export default Navbar;
+
+    
+  
