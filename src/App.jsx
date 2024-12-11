@@ -19,9 +19,8 @@ import Recepti from "./component/Recepti";
 const App = () => {
   return (
     <>
-    {/*
-    
-    */}
+    {/*Drugi comit */}
+
       {/* App Bar */}
       <AppBar
         position="static"
