@@ -14,10 +14,14 @@ import {
   Avatar,
 } from "@mui/material";
 import MojCard from "./component/Card";
+import Recepti from "./component/Recepti";
 
 const App = () => {
   return (
     <>
+    {/*
+    
+    */}
       {/* App Bar */}
       <AppBar
         position="static"
@@ -27,8 +31,8 @@ const App = () => {
           {/* Navigation Links */}
           <Box sx={{ flexGrow: 1, display: "flex", gap: 2 }}>
             <Button>Home</Button>
-            <Button>About</Button>
-            <Button>Services</Button>
+            <Button>Receti</Button>
+            <Button>Napravi nes </Button>
             <Button>Contact</Button>
           </Box>
         </Toolbar>
@@ -245,6 +249,7 @@ const App = () => {
           </Stack>
         </Stack>
       </Container>
+      <Recepti />
     </>
   );
 };
