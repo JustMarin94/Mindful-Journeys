@@ -6,8 +6,8 @@ import {
   Grid,
   Card,
   CardContent,
-  CardMedia,
-  Divider,
+  Button,
+  Stack,
 } from "@mui/material";
 import covjek from "../images/Recepti/e18db7e0a6b363055d0122c2386a113a-transformed-removebg-preview.png";
 import jaja from "../images/Recepti/35ead66dbc338c12c3c21b0243934326.jpg";
@@ -16,121 +16,144 @@ import smoothie from "../images/Recepti/83c0fccb564423516db8cebfc20df8d0.jpg";
 import palacinke from "../images/Recepti/1b693d5f968ffd44f23fc26d5bc32395.jpg";
 import dorucak from "../images/Recepti/a567adb3cb8d65af7d108c10f16a4e6a-removebg-preview.png";
 
-const Doručak = () => {
+const Dorucak = () => {
+  const recipes = [
+    { title: "Smoothie", image: smoothie },
+    { title: "Palačinke", image: palacinke },
+    { title: "Jaja i tost", image: jaja },
+    { title: "Sendvič", image: sendvic },
+  ];
+
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      {/* Top Section */}
-      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 4 }}>
-        {/* Enlarged Chef Illustration */}
-        <Box>
+    <Container maxWidth="lg" sx={{ mt: 4, fontFamily: "'Poppins', sans-serif" }}>
+      {/* Header Section */}
+      <Box sx={{ mb: 4 }}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between">
           <img
             src={covjek}
             alt="Chef illustration"
-            style={{ maxWidth: "250px", marginRight: "20px" }}
+            style={{ width: "250px", marginRight: "auto" }}
           />
-        </Box>
-        {/* Title and Text */}
-        <Box sx={{ textAlign: "right", flex: 1 }}>
-          <Typography variant="h3" sx={{ fontWeight: "bold", color: "#333" }}>
-            DORUČAK
-          </Typography>
-          <Divider sx={{ my: 1, borderColor: "#ccc", width: "100%", marginLeft: "auto" }} />
-          <Typography variant="subtitle1" sx={{ mt: 1, color: "#666" }}>
-            Početak dana uz – brz, zdrav i ukusan, božićni obrok koji svi
-            obožavaju!
-          </Typography>
-        </Box>
+          <Box>
+            <Typography
+              variant="h3"
+              sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
+            >
+              DORUČAK
+            </Typography>
+            <Box
+              sx={{
+                width: "100%",
+                height: "2px",
+                backgroundColor: "#222",
+                mt: 1,
+              }}
+            ></Box>
+            <Typography
+              variant="body1"
+              sx={{ mt: 2, color: "#444", textAlign: "right" }}
+            >
+              RIaktiv doručak – brzo, zdravo i ukusno, baš po mjeri svakog studenta!
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{ mt: 2, backgroundColor: "#df3821cc", color: "#fff" }}
+            >
+              UNESI NOVI BLOG
+            </Button>
+          </Box>
+        </Stack>
       </Box>
 
-      {/* Red Block with Recipe Cards */}
-      <Box sx={{ backgroundColor: "#f44336", p: 4, borderRadius: "8px", color: "#fff", mb: 4 }}>
-        <Typography variant="h5" sx={{ mb: 3, textAlign: "center" }}>
+      {/* Red Section */}
+      <Container
+        maxWidth="lg"
+        sx={{
+          backgroundColor: "#ffcccc",
+          py: 4,
+          borderRadius: 2,
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <Typography
+          variant="h5"
+          textAlign="center"
+          sx={{ mb: 3, color: "#444", fontWeight: "bold" }}
+        >
           Recepti koje ne možete propustiti za brz i zdrav doručak!
         </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="140"
-                image={smoothie}
-                alt="Smoothie"
-              />
-              <CardContent>
-                <Typography variant="h6" align="center">
-                  Smoothie
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="140"
-                image={palacinke}
-                alt="Palačinke"
-              />
-              <CardContent>
-                <Typography variant="h6" align="center">
-                  Palačinke
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="140"
-                image={jaja}
-                alt="Jaja i tost"
-              />
-              <CardContent>
-                <Typography variant="h6" align="center">
-                  Jaja i tost
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="140"
-                image={sendvic}
-                alt="Sendvič"
-              />
-              <CardContent>
-                <Typography variant="h6" align="center">
-                  Sendvič
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Box>
+        <Typography
+          variant="body1"
+          textAlign="center"
+          sx={{ mb: 4, color: "#666" }}
+        >
+          Inspirirajte se našim receptima za savršen početak dana!
+        </Typography>
 
-      {/* Final Image and Quote */}
-      <Box sx={{ display: "flex", alignItems: "center", mt: 6 }}>
-        <Box sx={{ flex: 1 }}>
-          <img
-            src={dorucak}
-            alt="Breakfast bowl"
-            style={{ width: "100%", borderRadius: "8px" }}
-          />
-        </Box>
-        <Box sx={{ flex: 1, ml: 4 }}>
+        <Grid container spacing={3}>
+          {recipes.map((recipe, index) => (
+            <Grid item xs={12} md={3} key={index}>
+              <Card
+                sx={{
+                  borderRadius: 2,
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                  textAlign: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    height: "150px",
+                    overflow: "hidden",
+                    backgroundColor: "#eaeaea",
+                    borderTopLeftRadius: 8,
+                    borderTopRightRadius: 8,
+                  }}
+                >
+                  <img
+                    src={recipe.image}
+                    alt={recipe.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Box>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom sx={{ color: "#333" }}>
+                    {recipe.title}
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    sx={{ mt: 2, backgroundColor: "#df3821cc", color: "#fff" }}
+                  >
+                    Pogledaj recept
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
+      {/* Footer Section */}
+      <Box textAlign="center" sx={{ mt: 6 }}>
+        <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
+          <img src={dorucak} alt="" style={{ width: "450px", borderRadius: "50%" }} />
           <Typography
             variant="h5"
-            sx={{ fontStyle: "italic", color: "#555", textAlign: "center" }}
+            align="center"
+            sx={{ fontStyle: "italic", fontWeight: "bold", color: "#333" }}
           >
-            “My breakfast is my morning superpower.”
+            "My breakfast is my morning superhero."
           </Typography>
-        </Box>
+        </Stack>
       </Box>
     </Container>
+
+     
   );
 };
 
-export default Doručak;
+export default Dorucak;

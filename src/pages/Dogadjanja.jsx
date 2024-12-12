@@ -48,7 +48,7 @@ const Dogadjanja = () => {
           <img
             src={slika}
             alt=""
-            style={{ width: "400px", marginRight: "auto" }}
+            style={{ width: "600px", marginRight: "auto" }}
           />
           <Box>
             <Typography
@@ -142,7 +142,7 @@ const Dogadjanja = () => {
                   <Button
                     variant="contained"
                     size="small"
-                    sx={{ mt: 2, backgroundColor: "#ff9800", color: "#fff" }}
+                    sx={{ mt: 2, backgroundColor: "#fbeb7899", color: "#000" }}
                   >
                     Pogledaj više
                   </Button>
@@ -209,7 +209,7 @@ const Dogadjanja = () => {
       {/* Footer Section */}
       <Box textAlign="center" sx={{ mt: 6 }}>
         <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
-          <img src={slika1} alt="" style={{ width: "250px", borderRadius: "50%" }} />
+          <img src={slika1} alt="" style={{ width: "500px", borderRadius: "50%" }} />
           <Typography
             variant="h5"
             align="center"

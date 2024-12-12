@@ -20,53 +20,43 @@ const Radionice = () => {
     <Container maxWidth="lg" sx={{ mt: 4, fontFamily: "'Poppins', sans-serif" }}>
       {/* Header Section */}
       <Box sx={{ mb: 6 }}>
-        <Stack direction="row" alignItems="center" spacing={4}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between">
           {/* Left Side: Image */}
-          <Box sx={{ flex: 1 }}>
-            <img
-              src={prva}
-              alt="Smajlic"
-              style={{
-                width: "100%",
-                maxWidth: "300px",
-                display: "block",
-                margin: "0 auto",
-              }}
-            />
-          </Box>
+          <img
+            src={prva}
+            alt="Smajlic"
+            style={{
+              width: "400px",
+              marginRight: "auto",
+            }}
+          />
 
           {/* Right Side: Title and Text */}
-          <Box sx={{ flex: 2 }}>
+          <Box>
             <Typography
               variant="h3"
-              sx={{
-                fontWeight: "bold",
-                color: "#333",
-                textTransform: "uppercase",
-                mb: 1,
-              }}
+              sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
             >
-              Radionice
+              RADIONICE
             </Typography>
             <Box
               sx={{
                 width: "100%",
                 height: "2px",
-                backgroundColor: "#333",
-                mb: 2,
+                backgroundColor: "#222",
+                mt: 1,
               }}
             ></Box>
-            <Typography variant="body1" sx={{ color: "#666", mb: 2 }}>
-              Uz RIaktiv radionice za mentalno zdravlje, pronađi ravnotežu,
-              osnaži um i nauči brinuti o sebi na najbolji način!
+            <Typography
+              variant="body1"
+              sx={{ mt: 2, color: "#444", textAlign: "right" }}
+            >
+               Uz RIaktiv radionice za mentalno zdravlje, pronađi ravnotežu,<br />
+               osnaži um i nauči brinuti o sebi na najbolji način!
             </Typography>
             <Button
               variant="contained"
-              sx={{
-                backgroundColor: "#66bb6a",
-                color: "#fff",
-                textTransform: "uppercase",
-              }}
+              sx={{ mt: 2, backgroundColor: "#b9e185cc", color: "#fff" }}
             >
               Unesi novi blog
             </Button>
@@ -78,7 +68,7 @@ const Radionice = () => {
       <Container
         maxWidth="lg"
         sx={{
-          backgroundColor: "#d8f5d3",
+          backgroundColor: "#b9e18540",
           py: 4,
           px: 3,
           borderRadius: 2,
@@ -90,8 +80,7 @@ const Radionice = () => {
           variant="h5"
           sx={{ mb: 3, color: "#444", fontWeight: "bold" }}
         >
-          Mjesto gdje možeš učiti, rasti i pronaći snagu za svaki novi izazov -
-          pridruži nam se!
+          Mjesto gdje možeš učiti, rasti i pronaći snagu za svaki novi izazov - pridruži nam se!
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={4}>
@@ -118,7 +107,7 @@ const Radionice = () => {
                   variant="h6"
                   sx={{ fontWeight: "bold", color: "#333", mb: 1 }}
                 >
-                  UPRAVLJANJE STRESOM I PREVENCIJA BURNOUTA
+                  Upravljanje stresom i prevencija burnouta
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#666" }}>
                   Pronađi unutarnji mir uz jednostavne tehnike.
@@ -150,7 +139,7 @@ const Radionice = () => {
                   variant="h6"
                   sx={{ fontWeight: "bold", color: "#333", mb: 1 }}
                 >
-                  IZGRADNJA POZITIVNOG UMA
+                  Izgradnja pozitivnog uma
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#666" }}>
                   Iskoristi svoju kreativnost za bolji dan!
@@ -182,7 +171,7 @@ const Radionice = () => {
                   variant="h6"
                   sx={{ fontWeight: "bold", color: "#333", mb: 1 }}
                 >
-                  NAUČI ŽIVJETI U TRENUTKU
+                  Nauči živjeti u trenutku
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#666" }}>
                   Otkrij kako pronaći sreću u malim stvarima.
@@ -193,46 +182,21 @@ const Radionice = () => {
         </Grid>
       </Container>
 
-      {/* Footer Section */}
-      <Box
-        sx={{
-          mt: 6,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        {/* Left Side: Image */}
-        <Box sx={{ flex: 1 }}>
-          <img
-            src={kraj}
-            alt="Inspirativna slika"
-            style={{
-              width: "100%",
-              height: "300px",
-              objectFit: "cover",
-              borderRadius: "8px",
-              boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-            }}
-          />
-        </Box>
+      
 
-        {/* Right Side: Quote */}
-        <Box sx={{ flex: 1, ml: 4 }}>
-          <Typography
-            variant="h5"
-            sx={{
-              fontStyle: "italic",
-              fontWeight: "bold",
-              color: "#333",
-              mb: 2,
-              textAlign: "center",
-            }}
-          >
-            "Be yourself; everyone else is already taken."
-          </Typography>
+           {/* Footer Section */}
+        <Box textAlign="center" sx={{ mt: 6 }}>
+          <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
+            <img src={kraj} alt="" style={{ width: "450px", borderRadius: "50%" }} />
+            <Typography
+              variant="h5"
+              align="center"
+              sx={{ fontStyle: "italic", fontWeight: "bold", color: "#333" }}
+            >
+              "Be yourself; everyone else is already taken."
+            </Typography>
+          </Stack>
         </Box>
-      </Box>
     </Container>
   );
 };
