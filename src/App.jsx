@@ -12,9 +12,6 @@ import MentalnoZdravlje from "./pages/MentalnoZdravlje";
 import ProfilLista from "./pages/ProfilLista";
 
 function App() {
-
-//provjera da je ovo zadnja verzija
-
   return (
     <Router>
       <Navbar />
