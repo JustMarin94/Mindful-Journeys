@@ -1,163 +1,165 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
+  Button,
+  Avatar,
+  Box,
   Menu,
   MenuItem,
-  Button,
+  Typography,
   IconButton,
-  Avatar,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+
+// Uvoz lokalnih slika
+import Logo from "../images/Login_stranica/Yellow_and_Green_Modern_Logo-removebg-preview.png";
+import AvatarImg from "../images/Profil/86e086efb17f46db00b20a433aca4a55.jpg";
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [activeMenu, setActiveMenu] = React.useState("");
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [openMenu, setOpenMenu] = useState("");
 
+  // Funkcije za otvaranje/zatvaranje menija
   const handleMenuOpen = (event, menu) => {
     setAnchorEl(event.currentTarget);
-    setActiveMenu(menu);
+    setOpenMenu(menu);
   };
 
   const handleMenuClose = () => {
     setAnchorEl(null);
-    setActiveMenu("");
+    setOpenMenu("");
   };
 
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Mindful Journeys
-        </Typography>
+    <AppBar position="static" sx={{ backgroundColor: "#fff", boxShadow: 0 }}>
+      <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
+        {/* Avatar sa strelicom i padajućim menijem */}
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Avatar
+            alt="User Avatar"
+            src={AvatarImg}
+            sx={{ cursor: "pointer", marginRight: 1 }}
+            component={Link}
+            to="/profil" // Ovo vodi na stranicu profila
+          />
+          <IconButton
+            onClick={(event) => handleMenuOpen(event, "profil")}
+            sx={{ color: "black" }}
+          >
+            <ArrowDropDownIcon />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={openMenu === "profil"}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={handleMenuClose} component={Link} to="/pravila">
+              Pravila
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>Odjava</MenuItem>
+          </Menu>
+        </Box>
 
-        {/* Profil Menu */}
-        <Button
-          color="inherit"
-          onClick={(event) => handleMenuOpen(event, "profil")}
+        {/* Centralni meni */}
+        <Box
+          sx={{
+            display: "flex",
+            gap: 4,
+            backgroundColor: "#fff",
+            borderRadius: 5,
+            padding: "8px 24px",
+            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          }}
         >
-          {/*ovdje stavi link od slike sta zelis za avatara */}
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </Button>
-        <Menu
-          anchorEl={anchorEl}
-          open={activeMenu === "profil"}
-          onClose={handleMenuClose}
-        >
-          <MenuItem onClick={handleMenuClose} component={Link} to="/profil">
-            Profil
-          </MenuItem>
-          <MenuItem
-            onClick={handleMenuClose}
+          {/* Recepti */}
+          <Button
+            color="inherit"
             component={Link}
-            to="/profil/ranglista"
+            to="/recepti"
+            sx={{ color: "#000", fontWeight: "bold" }}
           >
-            Ranglista
-          </MenuItem>
-        </Menu>
+            RECEPTI
+          </Button>
 
-        {/* Recepti Menu */}
-        <Button
-          color="inherit"
-          onClick={(event) => handleMenuOpen(event, "recepti")}
-        >
-          Recepti
-        </Button>
-        <Menu
-          anchorEl={anchorEl}
-          open={activeMenu === "recepti"}
-          onClose={handleMenuClose}
-        >
-          <MenuItem onClick={handleMenuClose} component={Link} to="/recepti">
-            Recepti
-          </MenuItem>
-          <MenuItem
-            onClick={handleMenuClose}
-            component={Link}
-            to="/recepti/doručak"
+          {/* Putovanja */}
+          <Button
+            color="inherit"
+            onClick={(event) => handleMenuOpen(event, "putovanja")}
+            sx={{ color: "#000", fontWeight: "bold" }}
           >
-            Doručak
-          </MenuItem>
-          <MenuItem
-            onClick={handleMenuClose}
-            component={Link}
-            to="/recepti/ručak"
+            PUTOVANJA
+          </Button>
+          <Menu
+            anchorEl={anchorEl}
+            open={openMenu === "putovanja"}
+            onClose={handleMenuClose}
           >
-            Ručak
-          </MenuItem>
-          <MenuItem
-            onClick={handleMenuClose}
-            component={Link}
-            to="/recepti/večera"
-          >
-            Večera
-          </MenuItem>
-        </Menu>
+            <MenuItem
+              onClick={handleMenuClose}
+              component={Link}
+              to="/putovanja"
+            >
+              Putovanja
+            </MenuItem>
+            <MenuItem
+              onClick={handleMenuClose}
+              component={Link}
+              to="/putovanja/blog"
+            >
+              Blog Putovanja
+            </MenuItem>
+          </Menu>
 
-        {/* Putovanja Menu */}
-        <Button
-          color="inherit"
-          onClick={(event) => handleMenuOpen(event, "putovanja")}
-        >
-          Putovanja
-        </Button>
-        <Menu
-          anchorEl={anchorEl}
-          open={activeMenu === "putovanja"}
-          onClose={handleMenuClose}
-        >
-          <MenuItem onClick={handleMenuClose} component={Link} to="/putovanja">
-            Glavna
-          </MenuItem>
-          <MenuItem
-            onClick={handleMenuClose}
-            component={Link}
-            to="/putovanja/blog"
+          {/* Mentalno Zdravlje */}
+          <Button
+            color="inherit"
+            onClick={(event) => handleMenuOpen(event, "zdravlje")}
+            sx={{ color: "#000", fontWeight: "bold" }}
           >
-            Blog
-          </MenuItem>
-        </Menu>
+            MENTALNO ZDRAVLJE
+          </Button>
+          <Menu
+            anchorEl={anchorEl}
+            open={openMenu === "zdravlje"}
+            onClose={handleMenuClose}
+          >
+            <MenuItem
+              onClick={handleMenuClose}
+              component={Link}
+              to="/zdravlje/radionice"
+            >
+              Radionice
+            </MenuItem>
+            <MenuItem
+              onClick={handleMenuClose}
+              component={Link}
+              to="/zdravlje/blog"
+            >
+              Blog Mentalno Zdravlje
+            </MenuItem>
+          </Menu>
 
-        {/* Zdravlje Menu */}
-        <Button
-          color="inherit"
-          onClick={(event) => handleMenuOpen(event, "zdravlje")}
-        >
-          Zdravlje
-        </Button>
-        <Menu
-          anchorEl={anchorEl}
-          open={activeMenu === "zdravlje"}
-          onClose={handleMenuClose}
-        >
-          <MenuItem onClick={handleMenuClose} component={Link} to="/zdravlje">
-            Mentalno Zdravlje
-          </MenuItem>
-          <MenuItem
-            onClick={handleMenuClose}
+          {/* Događanja */}
+          <Button
+            color="inherit"
             component={Link}
-            to="/zdravlje/radionice"
+            to="/dogadjanja"
+            sx={{ color: "#000", fontWeight: "bold" }}
           >
-            Radionice
-          </MenuItem>
-          <MenuItem
-            onClick={handleMenuClose}
-            component={Link}
-            to="/zdravlje/blog"
-          >
-            Blog
-          </MenuItem>
-        </Menu>
+            DOGAĐANJA
+          </Button>
+        </Box>
 
-        {/* Other Links */}
-        <Button color="inherit" component={Link} to="/pravila">
-          Pravila
-        </Button>
-        <Button color="inherit" component={Link} to="/dogadjanja">
-          Događanja
-        </Button>
+        {/* Logo na desnoj strani */}
+        <Box>
+          <img
+            src={Logo}
+            alt="RIaktiv Logo"
+            style={{ height: "100px", cursor: "pointer" }}
+          />
+        </Box>
       </Toolbar>
     </AppBar>
   );
