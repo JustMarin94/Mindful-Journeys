@@ -12,7 +12,7 @@ import trofej from "../images/Pravila/baa6436dd6191adc38594ea28b09d431-removebg-
 
 const Pravila = () => {
   return (
-    <Container maxWidth="md" sx={{ backgroundColor: "#f8f8f8", padding: 4 }}>
+    <Container maxWidth="md" sx={{padding: 4 }}>
       {/* Header with Sirena Image */}
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12} sm={4}>
@@ -27,8 +27,15 @@ const Pravila = () => {
           <Typography variant="h4" sx={{ fontWeight: "bold", color: "#333" }}>
             PRAVILA
           </Typography>
-          <Divider sx={{ borderColor: "#ccc", marginY: 2 }} />
-          <Typography variant="body1" sx={{ fontSize: "1.2rem", lineHeight: 1.8 }}>
+          <Box
+            sx={{
+              width: "100%",
+              height: "2px",
+              backgroundColor: "#222", // Crna boja linije
+              mt: 1, // Gornja margina linije
+            }}
+          ></Box>
+          <Typography variant="body1" sx={{ fontSize: "1.2rem", lineHeight: 1.8, textAlign: "justify" }}>
             Dobrodošli u RIaktiv bodovni sustav! Ovdje svaka vaša aktivnost
             donosi bodove, a na kraju akademske godine čeka vas prilika za
             osvajanje nagrada. Sudjelovanjem u izletima, radionicama i pisanjem
@@ -129,35 +136,50 @@ const Pravila = () => {
         <Typography variant="h5" sx={{ fontWeight: "bold", mt: 4, mb: 2 }}>
           Pravila ponašanja
         </Typography>
-        <ul>
-          <li>
-            <Typography variant="body1">
-              Poštovanje prema drugima: Komunikacija mora biti u duhu
-              međusobnog poštovanja. Govor mržnje, uvrede i bilo koji oblik
-              diskriminacije strogo su zabranjeni.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1">
-              Zlouporaba sustava: Bodovi se neće priznati za lažne prijave
-              sudjelovanja, kopirane blogove ili komentare koji nisu
-              konstruktivni.
-            </Typography>
-          </li>
-          <li>
-            <Typography variant="body1">
-              Evidencija aktivnosti: Organizator ima pravo odbiti bodovanje
-              aktivnosti koja nije u skladu s pravilima ili temom aplikacije.
-            </Typography>
-          </li>
-        </ul>
 
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          <strong>Prilagodbe pravila:</strong> RIaktiv zadržava pravo izmjene
-          pravila igre i bodovnog sustava radi osiguranja pravednosti. Korisnici
-          će biti obaviješteni o svim promjenama.
+        <ul style={{ paddingLeft: "24px" }}>
+            <Typography variant="body1">
+              <strong> 1. Poštovanje prema drugima:</strong> <br /> 
+              <ul>
+                <li>
+                  <p style={{marginLeft: "16px" }}>
+                  Komunikacija mora biti u duhu
+                  međusobnog poštovanja. Govor mržnje, uvrede i bilo koji oblik
+                  diskriminacije strogo su zabranjeni.
+              </p>
+                </li>
+                <li>
+              <p style={{marginLeft: "16px" }}> Budite podrška drugima – 
+                dijeljenje pozitivnih iskustava čini zajednicu jačom.
+              </p>
+                </li>
+              </ul>
         </Typography>
-      </Box>
+          <Typography variant="body1">
+            <strong>2. Zlouporaba sustava:</strong> <br /> 
+            <ul>
+              <li>
+                <p style={{marginLeft: "16px"}}>
+                Bodovi se neće priznati za lažne prijave
+                sudjelovanja, kopirane blogove ili komentare koji nisu konstruktivni.
+                </p>
+              </li>
+            </ul>
+          </Typography>
+          <Typography variant="body1">
+            <strong>3. Evidencija aktivnosti:</strong> Organizator ima pravo odbiti bodovanje
+            aktivnosti koja nije u skladu s pravilima ili temom aplikacije.
+          </Typography>
+        </ul>
+    </Box>
+
+      <Typography variant="body1" sx={{ mt: 2 }}>
+  <strong>Prilagodbe pravila:</strong> Rlaktiv zadržava pravo izmjene
+  pravila igre i bodovnog sustava radi osiguranja pravednosti. Korisnici će biti
+  obaviješteni o svim promjenama.
+</Typography>
+
+
 
       {/* Closing Section */}
       <Grid container spacing={2} alignItems="center" sx={{ mt: 4 }}>
