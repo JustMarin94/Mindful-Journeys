@@ -108,7 +108,7 @@ const Navbar = () => {
               component={Link}
               to="/putovanja/blog"
             >
-              Blog Putovanja
+              Blog putovanja
             </MenuItem>
           </Menu>
 
@@ -137,7 +137,7 @@ const Navbar = () => {
               component={Link}
               to="/zdravlje/blog"
             >
-              Blog Mentalno Zdravlje
+              Blog mentalno zdravlje
             </MenuItem>
           </Menu>
 

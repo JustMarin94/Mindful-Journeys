@@ -24,7 +24,7 @@ import keksi from "../images/Recepti/keksi_02.jpg";
 
 const recipes = [
   { title: "Doručak", image: dorucak, link: "/recepti/doručak" },
-  { title: "Rucak", image: keksi, link: "/Rucak" },
+  { title: "Ručak", image: keksi, link: "/Rucak" },
   { title: "Večera", image: keksi, link: "/Vecera" },
   { title: "Juha", image: juha, link: "/Juha" },
   { title: "Salata", image: keksi, link: "/Salata" },
@@ -56,7 +56,8 @@ export default function Recepti() {
             style={{ width: "250px", height: "auto", marginRight: "2rem" }}
           />
           <Box textAlign="right">
-            <Typography variant="h3" sx={{ fontWeight: "bold", color: "#222" }}>
+            <Typography variant="h3" 
+              sx={{ fontWeight: "bold", color: "#222", textAlign: "right"  }}>
               RECEPTI
             </Typography>
             <Box
@@ -67,14 +68,15 @@ export default function Recepti() {
                 mt: 1,
               }}
             ></Box>
-            <Typography variant="body1" sx={{ mt: 2, color: "#444" }}>
+            <Typography variant="body1"
+             sx={{ mt: 2, color: "#444", textAlign: "right"  }}>
               RIaktiv recepti – tvoj put do zdravih i brzih obroka na studentski način!
             </Typography>
             <Button
               variant="contained"
-              sx={{ mt: 2, backgroundColor: "#f44336", color: "#fff" }}
+              sx={{ mt: 2, backgroundColor: "#df3821cc", color: "#fff" }}
             >
-              Unesi Novi Recept
+              UNESI NOVI RECEPT
             </Button>
           </Box>
         </Stack>
@@ -98,6 +100,13 @@ export default function Recepti() {
         >
           Popularni recepti koje ne možeš propustiti!
         </Typography>
+        <Typography
+          variant="body1"
+          textAlign="center"
+          sx={{ mb: 4, color: "#666" }}
+        >
+          Recepti koje naši studenti obožavaju, isprobaj ih i ti!
+        </Typography>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} sm={6} md={4}>
             <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
@@ -117,7 +126,7 @@ export default function Recepti() {
                 <Button
                   variant="contained"
                   size="small"
-                  sx={{ mt: 1, backgroundColor: "#f44336", color: "#fff" }}
+                  sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
                 >
                   Pogledaj Više
                 </Button>
@@ -143,7 +152,7 @@ export default function Recepti() {
                 <Button
                   variant="contained"
                   size="small"
-                  sx={{ mt: 1, backgroundColor: "#f44336", color: "#fff" }}
+                  sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
                 >
                   Pogledaj Više
                 </Button>
@@ -169,7 +178,7 @@ export default function Recepti() {
                   <Button 
                     variant="contained"
                     size="small"
-                    sx={{ mt: 1, backgroundColor: "#f44336", color: "#fff" }}
+                    sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
                   >
                     Pogledaj Više
                   </Button>
@@ -195,7 +204,14 @@ export default function Recepti() {
           textAlign="center"
           sx={{ mb: 3, color: "#444", fontWeight: "bold" }}
         >
-          Uživaj u kuhanju s nama!
+         Uživaj u kuhanju s nama!
+        </Typography>
+        <Typography
+          variant="body1"
+          textAlign="center"
+          sx={{ mb: 4, color: "#666" }}
+        >
+          Istraži okuse i mirise raznih recepata te svoja iskustva podijeli s nama!
         </Typography>
         <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
           <IconButton onClick={handlePrev}>
@@ -245,7 +261,7 @@ export default function Recepti() {
             align="center"
             sx={{ fontStyle: "italic", fontWeight: "bold", color: "#333" }}
           >
-            "Kuhanje je umjetnost, a svaki obrok priča svoju priču."
+            "If plan A fails, remember there are 25 more letters. That’s how many times I’ve tried this recipe."
           </Typography>
         </Stack>
       </Box>
