@@ -18,7 +18,6 @@ import Logo from "../images/Login_stranica/Yellow_and_Green_Modern_Logo-removebg
 import AvatarImg from "../images/Profil/86e086efb17f46db00b20a433aca4a55.jpg";
 
 
-// nesto i ovdje
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openMenu, setOpenMenu] = useState("");
