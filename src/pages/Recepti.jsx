@@ -20,29 +20,36 @@ import tunaPasta from "../images/Recepti/bf61cbb13a70399b030ceeac2543fe53.jpg";
 import juha from "../images/Recepti/bf0083ef13121f2cce94f1b1c2053774.jpg";
 import desert from "../images/Recepti/2286e2b3beebf8e89f35ee3fb8c6f44d.jpg";
 import riza from "../images/Recepti/33ec05e7bfa3006faca51b8d7aa0abb5.jpg";
-import keksi from "../images/Recepti/keksi_02.jpg";
+import rucak from "../images/Recepti/rucak.jpg";
+import vecera from "../images/Recepti/veecera.jpg";
+import salata from "../images/Recepti/salata.jpg";
 
 const recipes = [
-  { title: "Doručak", image: dorucak, link: "/recepti/doručak" },
-  { title: "Ručak", image: keksi, link: "/Rucak" },
-  { title: "Večera", image: keksi, link: "/Vecera" },
-  { title: "Juha", image: juha, link: "/Juha" },
-  { title: "Salata", image: keksi, link: "/Salata" },
-  { title: "Desert", image: desert, link: "/Desert" },
+  { title: "DORUČAK", image: dorucak, link: "/recepti/doručak" },
+  { title: "RUČAK", image: rucak, link: "/Rucak" },
+  { title: "VEČERA", image: vecera, link: "/Vecera" },
+  { title: "JUHA", image: juha, link: "/Juha" },
+  { title: "SALATA", image: salata, link: "/Salata" },
+  { title: "DESERT", image: desert, link: "/Desert" },
 ];
 
 export default function Recepti() {
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const itemsPerPage = 3;
+  const itemsPerPage = 4;
 
   const handleNext = () => {
-    setCarouselIndex((prev) => (prev + itemsPerPage) % recipes.length);
+    setCarouselIndex((prev) => (prev + 1) % recipes.length);
   };
 
   const handlePrev = () => {
-    setCarouselIndex((prev) =>
-      prev - itemsPerPage < 0 ? recipes.length - itemsPerPage : prev - itemsPerPage
-    );
+    setCarouselIndex((prev) => (prev - 1 + recipes.length) % recipes.length);
+  };
+
+  const getDisplayedRecipes = () => {
+    return [
+      ...recipes.slice(carouselIndex, carouselIndex + itemsPerPage),
+      ...recipes.slice(0, Math.max(0, carouselIndex + itemsPerPage - recipes.length)),
+    ].slice(0, itemsPerPage);
   };
 
   return (
@@ -56,8 +63,10 @@ export default function Recepti() {
             style={{ width: "250px", height: "auto", marginRight: "2rem" }}
           />
           <Box textAlign="right">
-            <Typography variant="h3" 
-              sx={{ fontWeight: "bold", color: "#222", textAlign: "right"  }}>
+            <Typography
+              variant="h3"
+              sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
+            >
               RECEPTI
             </Typography>
             <Box
@@ -68,8 +77,10 @@ export default function Recepti() {
                 mt: 1,
               }}
             ></Box>
-            <Typography variant="body1"
-             sx={{ mt: 2, color: "#444", textAlign: "right"  }}>
+            <Typography
+              variant="body1"
+              sx={{ mt: 2, color: "#444", textAlign: "right" }}
+            >
               RIaktiv recepti – tvoj put do zdravih i brzih obroka na studentski način!
             </Typography>
             <Button
@@ -96,14 +107,14 @@ export default function Recepti() {
         <Typography
           variant="h5"
           textAlign="center"
-          sx={{ mb: 3, color: "#444", fontWeight: "bold" }}
+          sx={{ mb: 3, color: "#000", fontWeight: "bold" }}
         >
           Popularni recepti koje ne možeš propustiti!
         </Typography>
         <Typography
           variant="body1"
           textAlign="center"
-          sx={{ mb: 4, color: "#666" }}
+          sx={{ mb: 4, color: "#444" }}
         >
           Recepti koje naši studenti obožavaju, isprobaj ih i ti!
         </Typography>
@@ -123,13 +134,13 @@ export default function Recepti() {
                   Ovaj recept za brzu i ukusnu tjesteninu s tunom...
                 </Typography>
                 <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-                <Button
-                  variant="contained"
-                  size="small"
-                  sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
-                >
-                  Pogledaj Više
-                </Button>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
+                  >
+                    Pogledaj Više
+                  </Button>
                 </Box>
               </CardContent>
             </Card>
@@ -149,13 +160,13 @@ export default function Recepti() {
                   Brz i ukusan obrok koji ćete obožavati...
                 </Typography>
                 <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-                <Button
-                  variant="contained"
-                  size="small"
-                  sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
-                >
-                  Pogledaj Više
-                </Button>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
+                  >
+                    Pogledaj Više
+                  </Button>
                 </Box>
               </CardContent>
             </Card>
@@ -175,7 +186,7 @@ export default function Recepti() {
                   Rižoto je uvijek dobar izbor za jednostavan...
                 </Typography>
                 <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-                  <Button 
+                  <Button
                     variant="contained"
                     size="small"
                     sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
@@ -191,65 +202,80 @@ export default function Recepti() {
 
       {/* Carousel Section */}
       <Box
-        sx={{
-          backgroundColor: "#ffcccc",
-          py: 4,
-          borderRadius: 2,
-          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-          mb: 6,
-        }}
-      >
-        <Typography
-          variant="h5"
-          textAlign="center"
-          sx={{ mb: 3, color: "#444", fontWeight: "bold" }}
-        >
-         Uživaj u kuhanju s nama!
-        </Typography>
-        <Typography
-          variant="body1"
-          textAlign="center"
-          sx={{ mb: 4, color: "#666" }}
-        >
-          Istraži okuse i mirise raznih recepata te svoja iskustva podijeli s nama!
-        </Typography>
-        <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
-          <IconButton onClick={handlePrev}>
-            <ArrowBackIos />
-          </IconButton>
-          {recipes.slice(carouselIndex, carouselIndex + itemsPerPage).map((recipe, index) => (
-            <Box key={index} textAlign="center">
-              <Link to={recipe.link} style={{ textDecoration: "none", color: "inherit" }}>
-                <Box
-                  sx={{
-                    width: "200px",
-                    height: "200px",
-                    borderRadius: 2,
-                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                    overflow: "hidden",
-                    mb: 1,
-                  }}
-                >
-                  <img
-                    src={recipe.image}
-                    alt={recipe.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                </Box>
-                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#444" }}>
-                  {recipe.title}
-                </Typography>
-              </Link>
-            </Box>
-          ))}
-          <IconButton onClick={handleNext}>
-            <ArrowForwardIos />
-          </IconButton>
-        </Stack>
-      </Box>
+  sx={{
+    backgroundColor: "#ffcccc",
+    py: 4,
+    borderRadius: 2,
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+    mb: 6,
+  }}
+>
+  <Typography
+    variant="h5"
+    textAlign="center"
+    sx={{ mb: 3, color: "#000", fontWeight: "bold" }}
+  >
+    Istraži recepte po kategorijama
+  </Typography>
+  <Box
+    sx={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+    }}
+  >
+    <IconButton onClick={handlePrev}>
+      <ArrowBackIos />
+    </IconButton>
+    <Grid container spacing={2} justifyContent="center">
+      {getDisplayedRecipes().map((recipe, idx) => (
+        <Grid item xs={12} sm={6} md={3} key={idx}>
+          <Card
+            sx={{
+              position: "relative", // Ovo omogućava pozicioniranje teksta preko slike
+              borderRadius: 2,
+              boxShadow: 2,
+              overflow: "hidden", // Sprečava tekst da izlazi van slike
+            }}
+          >
+            <Link to={recipe.link} style={{ textDecoration: "none" }}>
+              <img
+                src={recipe.image}
+                alt={recipe.title}
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                }}
+              />
+              <Typography
+                variant="h6"
+                sx={{
+                  position: "absolute", // Pozicionira tekst na sliku
+                  bottom: 0, // Tekst ide na dno slike
+                  width: "100%",
+                  color: "#fff", // Bela boja slova
+                  backgroundColor: "rgba(0, 0, 0, 0.2)", // Tamna pozadina sa prozirnošću
+                  textAlign: "left", // Centriran tekst
+                  padding: "5px", // Malo prostora oko teksta
+                  fontWeight: "bold",
+                }}
+              >
+                {recipe.title}
+              </Typography>
+            </Link>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+    <IconButton onClick={handleNext}>
+      <ArrowForwardIos />
+    </IconButton>
+  </Box>
+</Box>
 
-      {/* Footer Section */}
-      <Box textAlign="center" sx={{ mt: 6 }}>
+        {/* Footer Section */}
+        <Box textAlign="center" sx={{ mt: 6 }}>
         <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}>
           <img
             src={tanjur}
@@ -265,6 +291,7 @@ export default function Recepti() {
           </Typography>
         </Stack>
       </Box>
+
     </Container>
   );
 }

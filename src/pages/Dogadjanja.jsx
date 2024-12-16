@@ -88,14 +88,14 @@ const Dogadjanja = () => {
         <Typography
           variant="h5"
           textAlign="center"
-          sx={{ mb: 3, color: "#444", fontWeight: "bold" }}
+          sx={{ mb: 3, color: "#000", fontWeight: "bold" }}
         >
           Ne propusti najpopularnija događanja!
         </Typography>
         <Typography
           variant="body1"
           textAlign="center"
-          sx={{ mb: 4, color: "#666" }}
+          sx={{ mb: 4, color: "#444" }}
         >
           Spreman/na za akciju? Otkrij najuzbudljivije sportske i društvene događaje koji te čekaju!
         </Typography>
@@ -167,14 +167,14 @@ const Dogadjanja = () => {
         <Typography
           variant="h5"
           textAlign="center"
-          sx={{ mb: 2, color: "#444", fontWeight: "bold" }}
+          sx={{ mb: 2, color: "#000", fontWeight: "bold" }}
         >
           Sudjeluj i ti u nezaboravnim događanjima!
         </Typography>
         <Typography
           variant="body1"
           textAlign="center"
-          sx={{ mb: 4, color: "#666" }}
+          sx={{ mb: 4, color: "#444" }}
         >
           Opusti se, stekni nova prijateljstva i uživaj u energiji koju donose naši događaji!
         </Typography>

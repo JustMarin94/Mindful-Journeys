@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Box,
@@ -8,20 +8,44 @@ import {
   CardContent,
   Button,
   Stack,
+  IconButton,
 } from "@mui/material";
+import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import covjek from "../images/Recepti/e18db7e0a6b363055d0122c2386a113a-transformed-removebg-preview.png";
 import jaja from "../images/Recepti/35ead66dbc338c12c3c21b0243934326.jpg";
 import sendvic from "../images/Recepti/2c054ffe8b941e49baf590c853778a61.jpg";
 import smoothie from "../images/Recepti/83c0fccb564423516db8cebfc20df8d0.jpg";
 import palacinke from "../images/Recepti/1b693d5f968ffd44f23fc26d5bc32395.jpg";
+import kasa from "../images/Recepti/jhkhnjknl.jpg";
+import slani from "../images/Recepti/8496f874e42fee8aebb514e60e8a9553.jpg";
 import dorucak from "../images/Recepti/a567adb3cb8d65af7d108c10f16a4e6a-removebg-preview.png";
 
 const Dorucak = () => {
   const recipes = [
     { title: "Smoothie", image: smoothie },
-    { title: "Palačinke", image: palacinke },
-    { title: "Jaja i tost", image: jaja },
-    { title: "Sendvič", image: sendvic },
+    { title: "Lagane palačinke", image: palacinke },
+    { title: "Ostaci ostataka", image: jaja },
+    { title: "Mini sendviči", image: sendvic },
+    { title: "Zobena kaša", image: kasa },
+    { title: "Slani muffini", image: slani },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % recipes.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + recipes.length) % recipes.length
+    );
+  };
+
+  const visibleRecipes = [
+    recipes[currentIndex],
+    recipes[(currentIndex + 1) % recipes.length],
+    recipes[(currentIndex + 2) % recipes.length],
   ];
 
   return (
@@ -65,7 +89,7 @@ const Dorucak = () => {
         </Stack>
       </Box>
 
-      {/* Red Section */}
+      {/* Red Section with Carousel */}
       <Container
         maxWidth="lg"
         sx={{
@@ -78,63 +102,81 @@ const Dorucak = () => {
         <Typography
           variant="h5"
           textAlign="center"
-          sx={{ mb: 3, color: "#444", fontWeight: "bold" }}
+          sx={{ mb: 3, color: "#000", fontWeight: "bold" }}
         >
           Recepti koje ne možete propustiti za brz i zdrav doručak!
         </Typography>
         <Typography
           variant="body1"
           textAlign="center"
-          sx={{ mb: 4, color: "#666" }}
+          sx={{ mb: 4, color: "#444" }}
         >
           Inspirirajte se našim receptima za savršen početak dana!
         </Typography>
 
-        <Grid container spacing={3}>
-          {recipes.map((recipe, index) => (
-            <Grid item xs={12} md={3} key={index}>
-              <Card
-                sx={{
-                  borderRadius: 2,
-                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                  textAlign: "center",
-                }}
-              >
-                <Box
+        <Stack direction="row" alignItems="center" justifyContent="center">
+          <IconButton onClick={handlePrev}>
+            <ArrowBackIos />
+          </IconButton>
+
+          <Grid container spacing={3} justifyContent="center">
+            {visibleRecipes.map((recipe, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Card
                   sx={{
-                    height: "150px",
-                    overflow: "hidden",
-                    backgroundColor: "#eaeaea",
-                    borderTopLeftRadius: 8,
-                    borderTopRightRadius: 8,
+                    borderRadius: 2,
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                    textAlign: "center",
                   }}
                 >
-                  <img
-                    src={recipe.image}
-                    alt={recipe.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
+                  <Box
+                    sx={{
+                      height: "150px",
+                      overflow: "hidden",
+                      backgroundColor: "#eaeaea",
+                      borderTopLeftRadius: 8,
+                      borderTopRightRadius: 8,
                     }}
-                  />
-                </Box>
-                <CardContent>
-                  <Typography variant="h6" gutterBottom sx={{ color: "#333" }}>
-                    {recipe.title}
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    size="small"
-                    sx={{ mt: 2, backgroundColor: "#df3821cc", color: "#fff" }}
                   >
-                    Pogledaj recept
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+                    <img
+                      src={recipe.image}
+                      alt={recipe.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </Box>
+                  <CardContent>
+                    <Typography
+                      variant="h6"
+                      gutterBottom
+                      sx={{ color: "#333" }}
+                    >
+                      {recipe.title}
+                    </Typography>
+                    <Button
+                      variant="contained"
+                      size="small"
+                      sx={{
+                        mt: 2,
+                        backgroundColor: "#df3821cc",
+                        color: "#fff",
+                      }}
+                    >
+                      Pogledaj recept
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+
+          <IconButton onClick={handleNext}>
+            <ArrowForwardIos />
+          </IconButton>
+        </Stack>
       </Container>
 
       {/* Footer Section */}
@@ -151,8 +193,6 @@ const Dorucak = () => {
         </Stack>
       </Box>
     </Container>
-
-     
   );
 };
 
