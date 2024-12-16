@@ -15,6 +15,7 @@ import PutovanjaGlavna from "./pages/PutovanjaGlavna";
 import Recepti from "./pages/Recepti";
 
 function App() {
+
   return (
     <Router basename="/Mindful-Journeys">
       <Navbar />
