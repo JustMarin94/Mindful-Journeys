@@ -136,6 +136,9 @@ const Pravila = () => {
         <Typography variant="h5" sx={{ fontWeight: "bold", mt: 4, mb: 2 }}>
           Pravila ponašanja
         </Typography>
+        <Typography variant="body1" sx={{mt: 4, mb: 2 }}>
+        Kako bi RIaktiv ostao siguran i ugodan prostor za sve korisnike, pridržavajte se sljedećih pravila:
+        </Typography>
 
         <ul style={{ paddingLeft: "24px" }}>
             <Typography variant="body1">
@@ -154,7 +157,7 @@ const Pravila = () => {
               </p>
                 </li>
               </ul>
-        </Typography>
+            </Typography>
           <Typography variant="body1">
             <strong>2. Zlouporaba sustava:</strong> <br /> 
             <ul>
@@ -164,22 +167,64 @@ const Pravila = () => {
                 sudjelovanja, kopirane blogove ili komentare koji nisu konstruktivni.
                 </p>
               </li>
+              <li>
+                <p style={{marginLeft: "16px"}}>
+                Svi uneseni sadržaji moraju biti originalni i vezani uz temu.
+                </p>
+              </li>
             </ul>
           </Typography>
           <Typography variant="body1">
-            <strong>3. Evidencija aktivnosti:</strong> Organizator ima pravo odbiti bodovanje
-            aktivnosti koja nije u skladu s pravilima ili temom aplikacije.
+            <strong>3. Evidencija aktivnosti:</strong> <br />
+            <ul>
+              <li>
+                <p style={{marginLeft: "16px"}}>
+                Organizator ima pravo odbiti bodovanje aktivnosti koja nije u skladu s pravilima ili temom aplikacije.
+                </p>
+              </li>
+            </ul>
+          </Typography>
+          <Typography variant="body1">
+            <strong>4. Prilagodbe pravila:</strong> <br />
+            <ul>
+              <li>
+                <p style={{marginLeft: "16px"}}>
+                RIaktiv zadržava pravo izmjene pravila igre i bodovnog sustava radi osiguranja pravednosti. 
+                Korisnici će biti obaviješteni o svim promjenama.
+                </p>
+              </li>
+            </ul>
           </Typography>
         </ul>
     </Box>
 
-      <Typography variant="body1" sx={{ mt: 2 }}>
-  <strong>Prilagodbe pravila:</strong> Rlaktiv zadržava pravo izmjene
-  pravila igre i bodovnog sustava radi osiguranja pravednosti. Korisnici će biti
-  obaviješteni o svim promjenama.
-</Typography>
 
+      {/* Dodjela nagrada*/ }
+      <Typography variant="h5" sx={{ fontWeight: "bold", mt: 4, mb: 2 }}>
+          Dodjela nagrada
+      </Typography>
+      <ul>
+        <li>
+          <Typography>
+          Igra traje tijekom cijele akademske godine.
+          </Typography>
+        </li>
+        <li>
+          <Typography>
+          Početkom nove akademske godine objavljuju se rezultati, a nagrade se dodjeljuju najaktivnijim korisnicima.
+          </Typography>
+        </li>
+        <li>
+          <Typography>
+          U slučaju izjednačenog broja bodova, prednost se daje korisnicima s većim brojem različitih vrsta aktivnosti.
+          </Typography>
+        </li>
+      </ul>
 
+      {/*Sudjeluj, skupljaj bodove*/ }
+      <Typography variant="h5" sx={{ fontWeight: "bold", mt: 4, mb: 2 }}>
+      Sudjeluj, skupljaj bodove i osvoji nezaboravne nagrade – RIaktiv te nagrađuje za aktivan, zdrav i ispunjen studentski život!
+      </Typography>
 
       {/* Closing Section */}
       <Grid container spacing={2} alignItems="center" sx={{ mt: 4 }}>
@@ -198,6 +243,7 @@ const Pravila = () => {
               fontStyle: "italic",
               fontSize: "1.2rem",
               textAlign: "center",
+              fontWeight: "bold",
             }}
           >
             “Even if you’re on the right track, you’ll get run over if you just
