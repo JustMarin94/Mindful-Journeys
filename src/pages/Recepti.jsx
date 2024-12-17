@@ -187,31 +187,33 @@ export default function Recepti() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
-            <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
-              <img
-                src={tortilja}
-                alt="Tortilja Pizza"
-                style={{ width: "100%", height: "200px", objectFit: "cover" }}
-              />
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                  Tortilja Pizza
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Brz i ukusan obrok koji ćete obožavati...
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-                  <Button
-                    variant="contained"
-                    size="small"
-                    sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
-                  >
-                    Pogledaj Više
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
+  <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
+    <img
+      src={tortilja}
+      alt="Tortilja Pizza"
+      style={{ width: "100%", height: "200px", objectFit: "cover" }}
+    />
+    <CardContent>
+      <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+        Tortilja Pizza
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Brz i ukusan obrok koji ćete obožavati...
+      </Typography>
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
+        <Link to="/recepti/tortilja" style={{ textDecoration: "none" }}>
+          <Button
+            variant="contained"
+            size="small"
+            sx={{ mt: 1, backgroundColor: "#df3821cc", color: "#fff" }}
+          >
+            Pogledaj Više
+          </Button>
+        </Link>
+      </Box>
+    </CardContent>
+  </Card>
+</Grid>
           <Grid item xs={12} sm={6} md={4}>
             <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
               <img

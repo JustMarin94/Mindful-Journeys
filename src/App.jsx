@@ -12,28 +12,36 @@ import ProfilLista from "./pages/ProfilLista";
 import ZdravljeBlog from "./pages/ZdravljeBlog";
 import PutovanjaGlavna from "./pages/PutovanjaGlavna";
 import Recepti from "./pages/Recepti";
-import Naslovna from "./pages/Naslovna";
+import Navbar from "./component/Navbar"; 
 import Login from "./pages/Login";
+import Tortilja from "./pages/Tortilja";
+import Sedamslapova from "./pages/Sedamslapova";
+import Women from "./pages/Women";
+import Bled from "./pages/Bled";
 
 function App() {
   return (
     <Router basename="/Mindful-Journeys">
+      <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Naslovna />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/profil/ranglista" element={<ProfilLista />} />
         <Route path="/recepti" element={<Recepti />} />
         <Route path="/recepti/doručak" element={<Doručak />} />
         <Route path="/recepti/ručak" element={<Ručak />} />
+        <Route path="/recepti/tortilja" element={<Tortilja />} />
         <Route path="/recepti/večera" element={<Večera />} />
         <Route path="/putovanja" element={<PutovanjaGlavna />} />
+        <Route path="/putovanja/sedamslapova" element={<Sedamslapova />} />
+        <Route path="/putovanja/bled" element={<Bled />} />
         <Route path="/putovanja/blog" element={<Blog />} />
         <Route path="/zdravlje" element={<MentalnoZdravlje />} />
         <Route path="/zdravlje/radionice" element={<Radionice />} />
         <Route path="/zdravlje/blog" element={<ZdravljeBlog />} />
         <Route path="/pravila" element={<Pravila />} />
         <Route path="/dogadjanja" element={<Dogadjanja />} />
+        <Route path="/dogadjanja/women" element={<Women />} />
       </Routes>
     </Router>
   );

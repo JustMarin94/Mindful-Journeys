@@ -30,7 +30,7 @@ const carouselDestinations = [
   { title: "Logarska Dolina", image: logarskaDolina, link: "/putovanja/logarska-dolina" },
   { title: "Velika Planina", image: velikaPlanina, link: "/putovanja/velika-planina" },
   { title: "Plitvička Jezera", image: plitvickaJezera, link: "/putovanja/plitvice" },
-  { title: "Bled i Bohinj", image: bledJezero, link: "/putovanja/bled-bohinj" },
+  { title: "Bled i Bohinj", image: bledJezero, link: "/putovanja/bled" },
   { title: "Krka i Šibenik", image: krka, link: "/putovanja/krka-sibenik" },
 ];
 
@@ -156,33 +156,35 @@ export default function Putovanja() {
           Spremni za novu avanturu? Otkrij savršenu destinaciju za svoj studentski budžet!
         </Typography>
         <Grid container spacing={4} justifyContent="center">
-          {/* Staza Sedam Slapova */}
-          <Grid item xs={12} sm={6} md={4}>
-            <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
-              <img
-                src={sedamStaza}
-                alt="Staza Sedam Slapova"
-                style={{ width: "100%", height: "200px", objectFit: "cover" }}
-              />
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                  Staza Sedam Slapova
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                Ima nešto umirujuće u šumu vode i pogledu na slikovite...
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
-                  <Button
-                    variant="contained"
-                    size="small"
-                    sx={{ mt: 1, backgroundColor: "#648DCBCC", color: "#fff" }}
-                  >
-                    POGLEDAJ VIŠE
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
+         {/* Staza Sedam Slapova */}
+<Grid item xs={12} sm={6} md={4}>
+  <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
+    <img
+      src={sedamStaza}
+      alt="Staza Sedam Slapova"
+      style={{ width: "100%", height: "200px", objectFit: "cover" }}
+    />
+    <CardContent>
+      <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+        Staza Sedam Slapova
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Ima nešto umirujuće u šumu vode i pogledu na slikovite...
+      </Typography>
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 1 }}>
+        <Button
+          component={Link} // React Router komponenta za navigaciju
+          to="/putovanja/sedamslapova" // Ruta za navigaciju
+          variant="contained"
+          size="small"
+          sx={{ mt: 1, backgroundColor: "#648DCBCC", color: "#fff" }}
+        >
+          POGLEDAJ VIŠE
+        </Button>
+      </Box>
+    </CardContent>
+  </Card>
+</Grid>
 
           {/* Plitvička Jezera */}
           <Grid item xs={12} sm={6} md={4}>
