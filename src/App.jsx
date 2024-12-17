@@ -17,6 +17,7 @@ import Login from "./pages/Login";
 import Tortilja from "./pages/Tortilja";
 import Sedamslapova from "./pages/Sedamslapova";
 import Women from "./pages/Women";
+import Bled from "./pages/Bled";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/recepti/večera" element={<Večera />} />
         <Route path="/putovanja" element={<PutovanjaGlavna />} />
         <Route path="/putovanja/sedamslapova" element={<Sedamslapova />} />
+        <Route path="/putovanja/bled" element={<Bled />} />
         <Route path="/putovanja/blog" element={<Blog />} />
         <Route path="/zdravlje" element={<MentalnoZdravlje />} />
         <Route path="/zdravlje/radionice" element={<Radionice />} />

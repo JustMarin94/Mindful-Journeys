@@ -30,7 +30,7 @@ const carouselDestinations = [
   { title: "Logarska Dolina", image: logarskaDolina, link: "/putovanja/logarska-dolina" },
   { title: "Velika Planina", image: velikaPlanina, link: "/putovanja/velika-planina" },
   { title: "Plitvička Jezera", image: plitvickaJezera, link: "/putovanja/plitvice" },
-  { title: "Bled i Bohinj", image: bledJezero, link: "/putovanja/bled-bohinj" },
+  { title: "Bled i Bohinj", image: bledJezero, link: "/putovanja/bled" },
   { title: "Krka i Šibenik", image: krka, link: "/putovanja/krka-sibenik" },
 ];
 
