@@ -11,6 +11,8 @@ import {
   IconButton,
 } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { Facebook, Instagram } from "@mui/icons-material";
+
 import covjek from "../images/Recepti/e18db7e0a6b363055d0122c2386a113a-transformed-removebg-preview.png";
 import jaja from "../images/Recepti/35ead66dbc338c12c3c21b0243934326.jpg";
 import sendvic from "../images/Recepti/2c054ffe8b941e49baf590c853778a61.jpg";
@@ -50,44 +52,83 @@ const Dorucak = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, fontFamily: "'Poppins', sans-serif" }}>
-      {/* Header Section */}
-      <Box sx={{ mb: 4 }}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <img
-            src={covjek}
-            alt="Chef illustration"
-            style={{ width: "250px", marginRight: "auto" }}
-          />
-          <Box>
-            <Typography
-              variant="h3"
-              sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
-            >
-              DORUČAK
-            </Typography>
-            <Box
-              sx={{
-                width: "100%",
-                height: "2px",
-                backgroundColor: "#222",
-                mt: 1,
-              }}
-            ></Box>
-            <Typography
-              variant="body1"
-              sx={{ mt: 2, color: "#444", textAlign: "right" }}
-            >
-              RIaktiv doručak – brzo, zdravo i ukusno, baš po mjeri svakog studenta!
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{ mt: 2, backgroundColor: "#df3821cc", color: "#fff" }}
-            >
-              UNESI NOVI BLOG
-            </Button>
-          </Box>
+     {/* Header Section */}
+<Box sx={{ mb: 4 }}>
+  <Stack direction="row" alignItems="center" justifyContent="space-between">
+    {/* Left Side - Image */}
+    <img
+      src={covjek}
+      alt="Chef illustration"
+      style={{ width: "250px", marginRight: "auto" }}
+    />
+
+    {/* Right Side - Content */}
+    <Box textAlign="right">
+      <Typography
+        variant="h3"
+        sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
+      >
+        DORUČAK
+      </Typography>
+      <Box
+        sx={{
+          width: "100%",
+          height: "2px",
+          backgroundColor: "#222",
+          mt: 1,
+        }}
+      ></Box>
+      <Typography
+        variant="body1"
+        sx={{ mt: 2, color: "#444", textAlign: "right" }}
+      >
+        RIaktiv doručak – brzo, zdravo i ukusno, baš po mjeri svakog studenta!
+      </Typography>
+
+      {/* Button and Icons */}
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ mt: 2 }}
+      >
+        {/* Button */}
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "#df3821cc", // Red button color
+            color: "#fff",
+            fontWeight: "bold",
+          }}
+        >
+          UNESI NOVI BLOG
+        </Button>
+
+        {/* Social Media Icons */}
+        <Stack direction="row" spacing={2} sx={{ ml: "auto" }}>
+          <IconButton
+            component="a"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }} // Black color for Facebook icon
+          >
+            <Facebook fontSize="large" />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }} // Black color for Instagram icon
+          >
+            <Instagram fontSize="large" />
+          </IconButton>
         </Stack>
-      </Box>
+      </Stack>
+    </Box>
+  </Stack>
+</Box>
 
       {/* Red Section with Carousel */}
       <Container

@@ -8,7 +8,9 @@ import {
   CardContent,
   Button,
   Stack,
+  IconButton,
 } from "@mui/material";
+import { Facebook, Instagram } from "@mui/icons-material";
 import on from "../images/Putovanja/492544fe10891041872d8afffd8d7f76-removebg-preview.png";
 import sedam from "../images/Putovanja/staza-sedam-slapova-istra.jpg";
 import jezera from "../images/Putovanja/47283868_l-640x408.jpg";
@@ -26,46 +28,85 @@ const Blog = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, fontFamily: "'Poppins', sans-serif" }}>
-      {/* Header Section */}
-      <Box sx={{ mb: 4 }}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <img
-            src={on}
-            alt="Putnik"
-            style={{ width: "450px", marginRight: "auto" }}
-          />
-          <Box>
-            <Typography
-              variant="h3"
-              sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
-            >
-              BLOG PUTOVANJA
-            </Typography>
-            <Box
-              sx={{
-                width: "100%",
-                height: "2px",
-                backgroundColor: "#222",
-                mt: 1,
-              }}
-            ></Box>
-            <Typography
-              variant="body1"
-              sx={{ mt: 2, color: "#444", textAlign: "right" }}
-            >
-              Uz Raktiv putovanja istraži nova mjesta, stvori< br />
-              nezaboravne uspomene i pronađi inspiraciju za svaki
-              novi obrok!
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{ mt: 2, backgroundColor: "#648dcbcc", color: "#fff" }}
-            >
-              UNESI NOVI BLOG
-            </Button>
-          </Box>
+     {/* Header Section */}
+<Box sx={{ mb: 4 }}>
+  <Stack direction="row" alignItems="center" justifyContent="space-between">
+    {/* Left Side - Image */}
+    <img
+      src={on}
+      alt="Putnik"
+      style={{ width: "450px", marginRight: "auto" }}
+    />
+
+    {/* Right Side - Content */}
+    <Box sx={{ flex: 1 }}>
+      <Typography
+        variant="h3"
+        sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
+      >
+        BLOG PUTOVANJA
+      </Typography>
+      <Box
+        sx={{
+          width: "100%",
+          height: "2px",
+          backgroundColor: "#222",
+          mt: 1,
+        }}
+      ></Box>
+      <Typography
+        variant="body1"
+        sx={{ mt: 2, color: "#444", textAlign: "right" }}
+      >
+        Uz Raktiv putovanja istraži nova mjesta, stvori <br />
+        nezaboravne uspomene i pronađi inspiraciju za svaki
+        novi obrok!
+      </Typography>
+
+      {/* Button and Icons */}
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ mt: 2 }}
+      >
+        {/* Button */}
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "#648dcbcc",
+            color: "#fff",
+            fontWeight: "bold",
+          }}
+        >
+          UNESI NOVI BLOG
+        </Button>
+
+        {/* Social Media Icons */}
+        <Stack direction="row" spacing={2} sx={{ ml: "auto" }}>
+          <IconButton
+            component="a"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }}
+          >
+            <Facebook fontSize="large" />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }}
+          >
+            <Instagram fontSize="large" />
+          </IconButton>
         </Stack>
-      </Box>
+      </Stack>
+    </Box>
+  </Stack>
+</Box>
 
       {/* Blue Section */}
       <Container

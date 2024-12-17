@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { Facebook, Instagram } from "@mui/icons-material"; 
+
 import kuhar from "../images/Recepti/e18db7e0a6b363055d0122c2386a113a-transformed-removebg-preview.png";
 import tanjur from "../images/Recepti/63766abef4f3baf8fb80c1e732873cc6-removebg-preview.png";
 import tortilja from "../images/Recepti/0ee52694961ae463e3a341b990d9c028.jpg";
@@ -54,44 +56,83 @@ export default function Recepti() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, fontFamily: "'Poppins', sans-serif" }}>
-      {/* Header Section */}
-      <Box sx={{ mb: 4 }}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <img
-            src={kuhar}
-            alt="Kuhar"
-            style={{ width: "250px", height: "auto", marginRight: "2rem" }}
-          />
-          <Box textAlign="right">
-            <Typography
-              variant="h3"
-              sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
-            >
-              RECEPTI
-            </Typography>
-            <Box
-              sx={{
-                width: "100%",
-                height: "2px",
-                backgroundColor: "#222",
-                mt: 1,
-              }}
-            ></Box>
-            <Typography
-              variant="body1"
-              sx={{ mt: 2, color: "#444", textAlign: "right" }}
-            >
-              RIaktiv recepti – tvoj put do zdravih i brzih obroka na studentski način!
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{ mt: 2, backgroundColor: "#df3821cc", color: "#fff" }}
-            >
-              UNESI NOVI RECEPT
-            </Button>
-          </Box>
+     {/* Header Section */}
+<Box sx={{ mb: 4 }}>
+  <Stack direction="row" alignItems="center" justifyContent="space-between">
+    {/* Left Side - Image */}
+    <img
+      src={kuhar}
+      alt="Kuhar"
+      style={{ width: "250px", height: "auto", marginRight: "2rem" }}
+    />
+
+    {/* Right Side - Content */}
+    <Box textAlign="right">
+      <Typography
+        variant="h3"
+        sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
+      >
+        RECEPTI
+      </Typography>
+      <Box
+        sx={{
+          width: "100%",
+          height: "2px",
+          backgroundColor: "#222",
+          mt: 1,
+        }}
+      ></Box>
+      <Typography
+        variant="body1"
+        sx={{ mt: 2, color: "#444", textAlign: "right" }}
+      >
+        RIaktiv recepti – tvoj put do zdravih i brzih obroka na studentski način!
+      </Typography>
+
+      {/* Button and Icons */}
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ mt: 2 }}
+      >
+        {/* Button */}
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "#df3821cc", // Red color for the button
+            color: "#fff",
+            fontWeight: "bold",
+          }}
+        >
+          UNESI NOVI RECEPT
+        </Button>
+
+        {/* Social Media Icons */}
+        <Stack direction="row" spacing={2} sx={{ ml: "auto" }}>
+          <IconButton
+            component="a"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }} // Black color for Facebook icon
+          >
+            <Facebook fontSize="large" />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }} // Black color for Instagram icon
+          >
+            <Instagram fontSize="large" />
+          </IconButton>
         </Stack>
-      </Box>
+      </Stack>
+    </Box>
+  </Stack>
+</Box>
 
       {/* Popular Recipes Section */}
       <Box
