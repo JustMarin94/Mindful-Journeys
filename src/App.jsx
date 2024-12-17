@@ -15,6 +15,8 @@ import Recepti from "./pages/Recepti";
 import Navbar from "./component/Navbar"; 
 import Login from "./pages/Login";
 import Tortilja from "./pages/Tortilja";
+import Sedamslapova from "./pages/Sedamslapova";
+import Women from "./pages/Women";
 
 function App() {
   return (
@@ -30,12 +32,14 @@ function App() {
         <Route path="/recepti/tortilja" element={<Tortilja />} />
         <Route path="/recepti/večera" element={<Večera />} />
         <Route path="/putovanja" element={<PutovanjaGlavna />} />
+        <Route path="/putovanja/sedamslapova" element={<Sedamslapova />} />
         <Route path="/putovanja/blog" element={<Blog />} />
         <Route path="/zdravlje" element={<MentalnoZdravlje />} />
         <Route path="/zdravlje/radionice" element={<Radionice />} />
         <Route path="/zdravlje/blog" element={<ZdravljeBlog />} />
         <Route path="/pravila" element={<Pravila />} />
         <Route path="/dogadjanja" element={<Dogadjanja />} />
+        <Route path="/dogadjanja/women" element={<Women />} />
       </Routes>
     </Router>
   );
