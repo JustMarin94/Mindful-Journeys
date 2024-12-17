@@ -46,68 +46,70 @@ const ZdravljeBlog = () => {
   return (
     <Container maxWidth="lg" sx={{ mt: 4, fontFamily: "'Poppins', sans-serif" }}>
       {/* Header Section */}
-      <Box sx={{ mb: 6 }}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          {/* Left Side: Image */}
-          <img
-            src={prva}
-            alt="Smajlic"
-            style={{
-            width: "400px",
-            marginRight: "auto",
-            }}
-            />
-
-
-            {/* Right Side: Title and Text */}
-            <Box>
-              <Typography
-                variant="h3"
-                sx={{mt: 2, fontWeight: "bold", color: "#222", textAlign: "right" }}
-                >
-                BLOG MENTALNO
-              </Typography>
-              <Box
-                sx={{
-                width: "100%",
-                height: "2px",
-                backgroundColor: "#222",
-                mt: 1,
-                }}
-                >
-
-              </Box>
-                  <Typography
-                  variant="h3"
-                  sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
-                >
-                  ZDRAVLJE
-                </Typography>
-            </Box>
-
-            {/* Icons aligned right */}
-            <Stack direction="row" justifyContent={"flex-end"} alignItems={"center"} spacing={2} sx={{ mt: 20}} >
-              <IconButton
-                component="a"
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ color: "#000", fontSize: "2rem" }} // Black and larger size
-              >
-                <Facebook fontSize="large" />
-              </IconButton>
-              <IconButton
-                component="a"
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ color: "#000", fontSize: "2rem" }} // Black and larger size
-              >
-                <Instagram fontSize="large" />
-              </IconButton>
-            </Stack>
-            </Stack>
-            </Box>
+           <Box sx={{ mb: 6 }}>
+             <Stack direction="row" alignItems="center" justifyContent="space-between">
+               {/* Left Side: Image */}
+               <img
+                 src={prva}
+                 alt="Smajlic"
+                 style={{
+                   width: "400px",
+                   marginRight: "auto",
+                 }}
+               />
+     
+               {/* Right Side: Title and Text */}
+               <Box>
+                 <Typography
+                   variant="h3"
+                   sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
+                 >
+                   BLOG MENTALNO ZDRAVLJE
+                 </Typography>
+                 <Box
+                   sx={{
+                     width: "100%",
+                     height: "2px",
+                     backgroundColor: "#222",
+                     mt: 1,
+                   }}
+                 ></Box>
+                 <Typography
+                   variant="body1"
+                   sx={{ mt: 2, color: "#444", textAlign: "right" }}
+                 >
+                    Brini o sebi i svom umu – uz RIaktiv pronađi podršku, ravnotežu i snagu za svaki novi dan!
+                 </Typography>
+                 <Button
+                   variant="contained"
+                   sx={{ mt: 2, backgroundColor: "#b9e185cc", color: "#fff" }}
+                 >
+                   Unesi novi blog
+                 </Button>
+                  {/* Icons aligned right */}
+                         <Stack direction="row" spacing={2} sx={{ ml: "auto" }}>
+                           <IconButton
+                             component="a"
+                             href="https://www.facebook.com"
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             sx={{ color: "#000", fontSize: "2rem" }} // Black and larger size
+                           >
+                             <Facebook fontSize="large" />
+                           </IconButton>
+                           <IconButton
+                             component="a"
+                             href="https://www.instagram.com"
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             sx={{ color: "#000", fontSize: "2rem" }} // Black and larger size
+                           >
+                             <Instagram fontSize="large" />
+                           </IconButton>
+                         </Stack>
+               </Box>
+             </Stack>
+           </Box>
  
 
         {/* Carousel Section */}
