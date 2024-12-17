@@ -12,20 +12,22 @@ import ProfilLista from "./pages/ProfilLista";
 import ZdravljeBlog from "./pages/ZdravljeBlog";
 import PutovanjaGlavna from "./pages/PutovanjaGlavna";
 import Recepti from "./pages/Recepti";
-import Naslovna from "./pages/Naslovna";
+import Navbar from "./component/Navbar"; 
 import Login from "./pages/Login";
+import Tortilja from "./pages/Tortilja";
 
 function App() {
   return (
     <Router basename="/Mindful-Journeys">
+      <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Naslovna />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/profil/ranglista" element={<ProfilLista />} />
         <Route path="/recepti" element={<Recepti />} />
         <Route path="/recepti/doručak" element={<Doručak />} />
         <Route path="/recepti/ručak" element={<Ručak />} />
+        <Route path="/recepti/tortilja" element={<Tortilja />} />
         <Route path="/recepti/večera" element={<Večera />} />
         <Route path="/putovanja" element={<PutovanjaGlavna />} />
         <Route path="/putovanja/blog" element={<Blog />} />
