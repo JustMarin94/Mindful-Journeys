@@ -58,56 +58,71 @@ const ZdravljeBlog = () => {
                  }}
                />
      
-               {/* Right Side: Title and Text */}
-               <Box>
-                 <Typography
-                   variant="h3"
-                   sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
-                 >
-                   BLOG MENTALNO ZDRAVLJE
-                 </Typography>
-                 <Box
-                   sx={{
-                     width: "100%",
-                     height: "2px",
-                     backgroundColor: "#222",
-                     mt: 1,
-                   }}
-                 ></Box>
-                 <Typography
-                   variant="body1"
-                   sx={{ mt: 2, color: "#444", textAlign: "right" }}
-                 >
-                    Brini o sebi i svom umu – uz RIaktiv pronađi podršku, ravnotežu i snagu za svaki novi dan!
-                 </Typography>
-                 <Button
-                   variant="contained"
-                   sx={{ mt: 2, backgroundColor: "#b9e185cc", color: "#fff" }}
-                 >
-                   Unesi novi blog
-                 </Button>
-                  {/* Icons aligned right */}
-                         <Stack direction="row" spacing={2} sx={{ ml: "auto" }}>
-                           <IconButton
-                             component="a"
-                             href="https://www.facebook.com"
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             sx={{ color: "#000", fontSize: "2rem" }} // Black and larger size
-                           >
-                             <Facebook fontSize="large" />
-                           </IconButton>
-                           <IconButton
-                             component="a"
-                             href="https://www.instagram.com"
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             sx={{ color: "#000", fontSize: "2rem" }} // Black and larger size
-                           >
-                             <Instagram fontSize="large" />
-                           </IconButton>
-                         </Stack>
-               </Box>
+    {/* Right Side - Content */}
+    <Box sx={{ flex: 1 }}>
+      <Typography
+        variant="h3"
+        sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
+      >
+        BLOG MENTALNO
+      </Typography>
+      <Box
+        sx={{
+          width: "100%",
+          height: "2px",
+          backgroundColor: "#222",
+          mt: 1,
+        }}
+      ></Box>
+      <Typography
+        variant="h3"
+        sx={{ mt: 2, color: "#222", textAlign: "right", fontWeight: "bold" }}
+      >
+        ZDRAVLJE
+      </Typography>
+
+      {/* Button and Icons */}
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ mt: 2 }}
+      >
+        {/* Button */}
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "#b9e185cc",
+            color: "#fff",
+            fontWeight: "bold",
+          }}
+        >
+          UNESI NOVI BLOG
+        </Button>
+
+        {/* Social Media Icons */}
+        <Stack direction="row" spacing={2} sx={{ ml: "auto" }}>
+          <IconButton
+            component="a"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }}
+          >
+            <Facebook fontSize="large" />
+          </IconButton>
+          <IconButton
+            component="a"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "#000", fontSize: "2rem" }}
+          >
+            <Instagram fontSize="large" />
+          </IconButton>
+        </Stack>
+      </Stack>
+    </Box>
              </Stack>
            </Box>
  
