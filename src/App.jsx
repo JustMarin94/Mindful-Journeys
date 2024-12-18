@@ -19,6 +19,7 @@ import Sedamslapova from "./pages/Sedamslapova";
 import Women from "./pages/Women";
 import Bled from "./pages/Bled";
 
+
 function App() {
   return (
     <Router basename="/Mindful-Journeys">
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/profil" element={<Profil />} />
-        <Route path="/profil/ranglista" element={<ProfilLista />} />
+        <Route path="/profil/profillista" element={<ProfilLista />} />
         <Route path="/recepti" element={<Recepti />} />
         <Route path="/recepti/doručak" element={<Doručak />} />
         <Route path="/recepti/ručak" element={<Ručak />} />

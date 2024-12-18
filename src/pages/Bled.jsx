@@ -10,6 +10,7 @@ import {
   Button,
 } from "@mui/material";
 import { Facebook, Instagram } from "@mui/icons-material";
+import ContactForm from "../component/ContactForm";
 
 
 
@@ -133,7 +134,7 @@ const Bled = () => {
                       </Box>
 
       {/* Important Information Section */}
-      <Box sx={{ bgcolor: "#f8f5dc", p: 4, borderRadius: 2, mb: 6, mt: 10 }}>
+      <Box sx={{ bgcolor: "#D4E8FF", p: 4, borderRadius: 2, mb: 6, mt: 10 }}>
         <Typography
           variant="h5"
           fontWeight="bold"
@@ -161,7 +162,7 @@ const Bled = () => {
       </Box>
       
       {/* Event Details in Yellow Block */}
-      <Box sx={{ bgcolor: "#f8f5dc", p: 4, borderRadius: 2, mb: 6 }}>
+      <Box sx={{ bgcolor: "#D4E8FF", p: 4, borderRadius: 2, mb: 6 }}>
         <Typography
           variant="h5"
           fontWeight="bold"
@@ -185,82 +186,7 @@ const Bled = () => {
         </Typography>
       </Box>
 
-
-      <Box component="form" onSubmit={handleSubmit} sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-        <TextField
-          label="Ime"
-          variant="outlined"
-          name="ime"
-          value={formData.ime}
-          onChange={handleChange}
-            sx={{
-              backgroundColor: "#e3eaf5",
-              borderRadius: "20px",
-              "&:hover": { backgroundColor: "#dbe4f0" },
-              "&.Mui-focused": { backgroundColor: "#dbe4f0" },
-          }}
-        />
-
-        <TextField
-          label="Prezime"
-          variant="outlined"
-          name="prezime"
-          value={formData.prezime}
-          onChange={handleChange}
-            sx={{
-              backgroundColor: "#e3eaf5",
-              borderRadius: "20px",
-              "&:hover": { backgroundColor: "#dbe4f0" },
-              "&.Mui-focused": { backgroundColor: "#dbe4f0" },
-          }}
-        />
-
-        <TextField
-          label="E-mail"
-          variant="outlined"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-            sx={{
-              backgroundColor: "#e3eaf5",
-              borderRadius: "20px",
-              "&:hover": { backgroundColor: "#dbe4f0" },
-              "&.Mui-focused": { backgroundColor: "#dbe4f0" },
-            }}
-        />
-
-        <TextField
-          label="Dodatne Informacije"
-          variant="outlined"
-          name="dodatneInformacije"
-          value={formData.dodatneInformacije}
-          onChange={handleChange}
-          multiline
-          rows={4}
-            sx={{
-              backgroundColor: "#e3eaf5",
-              borderRadius: "20px",
-              "&:hover": { backgroundColor: "#dbe4f0" },
-              "&.Mui-focused": { backgroundColor: "#dbe4f0" },
-            }}
-
-        />
-        <Button type="submit" variant="contained" color="primary"
-            sx={{
-                backgroundColor: "#000",
-                color: "#fff",
-                borderRadius: "25px",
-                fontSize: "1rem",
-                fontWeight: "bold",
-                "&:hover": {
-                  backgroundColor: "#333",
-                },
-              }}
-        >  
-          POŠALJI UPIT
-        </Button>
-      </Box>
+     <ContactForm/>
     
 
     </Container>
