@@ -2,35 +2,56 @@ import React, { useState } from "react";
 import {
   Box,
   Typography,
-  Avatar,
   Button,
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
   Grid,
+  Tooltip,
+  IconButton,
 } from "@mui/material";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import EditNoteIcon from "@mui/icons-material/EditNote";
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { useNavigate } from "react-router-dom";
 import profil from "../images/Profil/86e086efb17f46db00b20a433aca4a55.jpg";
 
 const Profil = () => {
-  const [hasImage, setHasImage] = useState(false); // State to toggle profile picture
-  const [dialogOpen, setDialogOpen] = useState(false); // State for dialog
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleImageChange = () => {
-    setHasImage(true);
     setDialogOpen(false);
   };
 
+  const handleNavigate = () => {
+    navigate("/profil/profillista"); // Redirect to ranking page
+  };
+
   return (
-    <Box sx={{ p: 5 }}>
-      <Grid container spacing={4} alignItems="center">
-        {/* Profile Image Section */}
-        <Grid item xs={12} sm={4} textAlign="center">
+    <Box
+      sx={{
+        p: 5,
+        maxWidth: 1000,
+        margin: "auto",
+        textAlign: "center",
+        backgroundColor: "#fff",
+      }}
+    >
+      {/* Profile Section */}
+      <Grid container spacing={3} justifyContent="center" alignItems="center">
+        <Grid item xs={12} sm={4}>
           <Box
             sx={{
-              width: 300,
-              height: 300,
-              borderRadius: "50%",
+              position: "relative",
+              width: 250,
+              height: 250,
+              borderRadius: "20px",
               overflow: "hidden",
               boxShadow: 3,
               mx: "auto",
@@ -39,50 +60,82 @@ const Profil = () => {
             <img
               src={profil}
               alt="Profile"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
             />
+            {/* Camera Icon */}
+            <IconButton
+              sx={{
+                position: "absolute",
+                bottom: 10,
+                right: 10,
+                backgroundColor: "#fff",
+                color: "#555",
+                boxShadow: 2,
+              }}
+              onClick={() => setDialogOpen(true)}
+            >
+              <CameraAltIcon fontSize="small" />
+            </IconButton>
           </Box>
-          <Button
-            variant="contained"
-            onClick={() => setDialogOpen(true)}
-            sx={{ mt: 2 }}
-          >
-            {hasImage ? "Promijeni sliku profila" : "Dodaj sliku profila"}
-          </Button>
         </Grid>
 
-        {/* Profile Details Section */}
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={8} textAlign="left">
           <Typography variant="h4" fontWeight="bold" gutterBottom>
             LINA VEKIĆ
           </Typography>
           <Box
             sx={{
-              borderBottom: "2px solid #000",
-              width: "50px",
+              borderBottom: "3px solid #000",
+              width: "70px",
               mb: 2,
             }}
           ></Box>
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="h6" gutterBottom>
             Studij: Filozofski fakultet u Rijeci
           </Typography>
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="h6" gutterBottom>
             Grad: Makarska
           </Typography>
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="h6" gutterBottom>
             E-mail: lina.vekic@uniri.hr
           </Typography>
-          <Typography
-            variant="h6"
-            fontWeight="bold"
-            color="primary"
-            sx={{ display: "flex", alignItems: "center", mt: 2 }}
+
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              mt: 3,
+              cursor: "pointer",
+            }}
+            onClick={handleNavigate}
           >
-            <Box component="span" sx={{ mr: 1 }}>
-              🏆
-            </Box>
-            50 BODOVA
-          </Typography>
+            <EmojiEventsIcon sx={{ fontSize: 60, color: "#FFD700" }} />
+            <AddCircleOutlineIcon
+              sx={{
+                fontSize: 20,
+                color: "#1976d2",
+                position: "relative",
+                left: -10,
+                top: -5,
+              }}
+            />
+            <Tooltip
+              title="Više o skupljanju bodova pogledajte na stranici sa pravilima."
+              arrow
+            >
+              <Typography
+                variant="h5"
+                fontWeight="bold"
+                sx={{ ml: 1, color: "#333" }}
+              >
+                50 BODOVA
+              </Typography>
+            </Tooltip>
+          </Box>
         </Grid>
       </Grid>
 
@@ -90,45 +143,52 @@ const Profil = () => {
       <Grid
         container
         spacing={3}
-        justifyContent="space-around"
+        justifyContent="center"
         alignItems="center"
         sx={{ mt: 5 }}
       >
-        <Grid item>
-          <Button
-            variant="outlined"
-            startIcon={<Box component="span">💬</Box>}
-            sx={{ minWidth: 150 }}
-          >
-            6 Komentara
-          </Button>
+        <Grid item xs={3}>
+          <Tooltip title="Pregledajte svoje komentare." arrow>
+            <Box textAlign="center">
+              <ChatBubbleOutlineIcon sx={{ fontSize: 50, color: "#673ab7" }} />
+              <Typography variant="h6" sx={{ mt: 1 }}>
+                6 KOMENTARA
+              </Typography>
+            </Box>
+          </Tooltip>
         </Grid>
-        <Grid item>
-          <Button
-            variant="outlined"
-            startIcon={<Box component="span">📝</Box>}
-            sx={{ minWidth: 150 }}
-          >
-            2 Bloga
-          </Button>
+
+        <Grid item xs={3}>
+          <Tooltip title="Pregledajte svoje blogove." arrow>
+            <Box textAlign="center">
+              <EditNoteIcon sx={{ fontSize: 50, color: "#ff9800" }} />
+              <Typography variant="h6" sx={{ mt: 1 }}>
+                2 BLOGA
+              </Typography>
+            </Box>
+          </Tooltip>
         </Grid>
-        <Grid item>
-          <Button
-            variant="outlined"
-            startIcon={<Box component="span">⛰️</Box>}
-            sx={{ minWidth: 150 }}
-          >
-            2 Putovanja
-          </Button>
+
+        <Grid item xs={3}>
+          <Tooltip title="Broj obavljenih putovanja." arrow>
+            <Box textAlign="center">
+              <TravelExploreIcon sx={{ fontSize: 50, color: "#4caf50" }} />
+              <Typography variant="h6" sx={{ mt: 1 }}>
+                2 PUTOVANJA
+              </Typography>
+            </Box>
+          </Tooltip>
         </Grid>
-        <Grid item>
-          <Button
-            variant="outlined"
-            startIcon={<Box component="span">😊</Box>}
-            sx={{ minWidth: 150 }}
-          >
-            2 Radionice
-          </Button>
+
+        <Grid item xs={3}>
+          <Tooltip title="Broj obavljenih radionica." arrow>
+            <Box textAlign="center">
+              <EmojiEmotionsIcon sx={{ fontSize: 50, color: "#fbc02d" }} />
+              <Typography variant="h6" sx={{ mt: 1 }}>
+                2 RADIONICE
+              </Typography>
+            </Box>
+          </Tooltip>
         </Grid>
       </Grid>
 

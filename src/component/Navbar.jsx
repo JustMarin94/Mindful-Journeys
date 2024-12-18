@@ -131,7 +131,7 @@ const Navbar = () => {
               component={Link}
               to="/zdravlje/radionice"
             >
-              Radionice
+              Mentalno zdravlje
             </MenuItem>
             <MenuItem
               onClick={handleMenuClose}

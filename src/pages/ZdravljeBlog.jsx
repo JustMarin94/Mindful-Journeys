@@ -64,22 +64,23 @@ const ZdravljeBlog = () => {
         variant="h3"
         sx={{ fontWeight: "bold", color: "#222", textAlign: "right" }}
       >
-        BLOG MENTALNO
+        BLOG MENTALNO ZDRAVLJE
       </Typography>
+      
       <Box
-        sx={{
-          width: "100%",
-          height: "2px",
-          backgroundColor: "#222",
-          mt: 1,
-        }}
-      ></Box>
-      <Typography
-        variant="h3"
-        sx={{ mt: 2, color: "#222", textAlign: "right", fontWeight: "bold" }}
-      >
-        ZDRAVLJE
-      </Typography>
+              sx={{
+                width: "100%",
+                height: "2px",
+                backgroundColor: "#222",
+                mt: 1,
+              }}
+            ></Box>
+            <Typography
+              variant="body1"
+              sx={{ mt: 2, color: "#444", textAlign: "right" }}
+            >
+               Brini o sebi i svom umu – uz RIaktiv pronađi podršku, ravnotežu i snagu za svaki novi dan!
+            </Typography>
 
       {/* Button and Icons */}
       <Stack
@@ -192,7 +193,7 @@ const ZdravljeBlog = () => {
                       <Button
                         variant="contained"
                         color="success"
-                        sx={{ mt: 2, backgroundColor: "#82ca9d" }} // Style the button
+                        sx={{ mt: 2, backgroundColor: "#b9e185cc" }} // Style the button
                         href="#"
                         >
                         Pogledaj Više
