@@ -24,6 +24,7 @@ import Sedamslapova from "./pages/Sedamslapova";
 import Women from "./pages/Women";
 import Bled from "./pages/Bled";
 import Naslovna from "./pages/Naslovna";
+import Komentari from "./component/Komentari";
 
 function App() {
   const location = useLocation();
@@ -31,9 +32,9 @@ function App() {
   return (
     <div>
       {/* Conditionally render Navbar based on the pathname */}
-      {location.pathname !== "/naslovna" && location.pathname !== "/login" && (
-        <Navbar />
-      )}
+      {location.pathname !== "/naslovna" &&
+        location.pathname !== "/test" &&
+        location.pathname !== "/login" && <Navbar />}
       <Routes>
         <Route path="/" element={<Recepti />} />
         <Route path="/naslovna" element={<Naslovna />} />
@@ -54,6 +55,7 @@ function App() {
         <Route path="/pravila" element={<Pravila />} />
         <Route path="/dogadjanja" element={<Dogadjanja />} />
         <Route path="/dogadjanja/women" element={<Women />} />
+        <Route path="/test" element={<Komentari />} />
       </Routes>
     </div>
   );
