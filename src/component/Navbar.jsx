@@ -7,7 +7,6 @@ import {
   Box,
   Menu,
   MenuItem,
-  Typography,
   IconButton,
 } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -16,7 +15,6 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 // Uvoz lokalnih slika
 import Logo from "../images/Login_stranica/Yellow_and_Green_Modern_Logo-removebg-preview.png";
 import AvatarImg from "../images/Profil/86e086efb17f46db00b20a433aca4a55.jpg";
-
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -59,7 +57,9 @@ const Navbar = () => {
             <MenuItem onClick={handleMenuClose} component={Link} to="/pravila">
               Pravila
             </MenuItem>
-            <MenuItem onClick={handleMenuClose}>Odjava</MenuItem>
+            <MenuItem onClick={handleMenuClose} component={Link} to="/naslovna">
+              Odjava
+            </MenuItem>
           </Menu>
         </Box>
 
@@ -78,7 +78,7 @@ const Navbar = () => {
           <Button
             color="inherit"
             component={Link}
-            to="/recepti"
+            to="/"
             sx={{ color: "#000", fontWeight: "bold" }}
           >
             RECEPTI
@@ -155,11 +155,7 @@ const Navbar = () => {
 
         {/* Logo na desnoj strani */}
         <Box>
-          <img
-            src={Logo}
-            alt="RIaktiv Logo"
-            style={{ height: "100px", cursor: "pointer" }}
-          />
+          <img src={Logo} alt="RIaktiv Logo" style={{ height: "100px" }} />
         </Box>
       </Toolbar>
     </AppBar>

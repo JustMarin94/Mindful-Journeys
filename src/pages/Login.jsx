@@ -10,7 +10,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email === "ivazivac@gmail.com" && password === "lozinka") {
+    if (email === "lina.vekic@uniri.hr" && password === "lozinka") {
       console.log("Login successful!");
       navigate("/");
     } else {
